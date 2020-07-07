@@ -1,0 +1,18 @@
+<article class="container-vagas" >
+  <h3>Estados Atuais: </h3>
+  <section class="row">
+    <div *ngFor="let vaga of listaDeVaga ">
+
+      <div class="vaga-ocupada" *ngIf="vaga.status.toString() === 'OCUPADA' ">
+        <h5>{{ vaga.nome }}</h5>
+        <i id="ocupado" class="fa fa-car fa-3x"> </i>
+      </div>
+
+      <div class="vaga-disponivel" *ngIf="vaga.status.toString() === 'DISPONIVEL'">
+        <h5>{{ vaga.nome }}</h5>
+        <i id="livre" class="fa fa-car fa-3x"> </i>
+      </div>
+
+    </div>
+  </section>
+</article>
