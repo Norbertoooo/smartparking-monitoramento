@@ -13,9 +13,9 @@ export class VagaComponent implements OnInit {
   constructor( private vagaService: VagaService) { }
 
   ngOnInit(): void {
-    this.getStatus();
+    setInterval( () => this.getStatus(), 2000) ;
   }
-  getStatus() {
+  getStatus(): void {
    this.vagaService.listarStatus()
      .subscribe( (vaga) => { this.listaDeVaga = vaga; } );
   }
